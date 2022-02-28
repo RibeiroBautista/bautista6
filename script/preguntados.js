@@ -92,15 +92,6 @@ arrayPreguntas.push(pregunta4);
 
 /* || COMIENZO DEL BOTON PARA JUGAR || */
 
-/* const containerBoton = document.querySelector('.container')
-
-
-const formNombre = document.querySelector('form')
-
-formNombre.addEventListener('submit', (e) => {
-    e.preventDefault();
-}) */
-
 const botonJugar = document.querySelector('.botonJugar')
 botonJugar.addEventListener('click', () => {
     ejecutarPreguntados();
@@ -141,8 +132,7 @@ const contenedorRespuestas = document.querySelector(".containerRespuestas");
 const eventoClick = document.querySelector(".click");
 const clicks = [];
 
-document.addEventListener('DOMContentLoaded', (err) => {
-    err.preventDefault();
+document.addEventListener('DOMContentLoaded', () => {
     mostrarRespuestas();
 })
 
@@ -171,7 +161,7 @@ function mostrarRespuestas () {
 
 
 
-/* || COMIENZO FUNCIONES PARA ENCONTRAR RESPUESTAS || */
+/* || COMIENZO FUNCION PARA ENCONTRAR RESPUESTAS || */
 
 function cambiarColor(id) {
     const encontrarRespuestas = respuestasDOM.find( respuesta => respuesta.id === id)
@@ -179,11 +169,11 @@ function cambiarColor(id) {
     mostrarClicks(clicks);
 }
 
-/* || FIN FUNCIONES PARA ENCONTRAR RESPUESTAS || */
+/* || FIN FUNCION PARA ENCONTRAR RESPUESTAS || */
 
 
 
-/* || COMIENZO FUNCIONES PARA EVENTOS CON CLICK || */
+/* || COMIENZO FUNCION PARA EVENTOS CON CLICK || */
 
 function mostrarClicks(clickEvent) {
 
@@ -193,7 +183,7 @@ function mostrarClicks(clickEvent) {
     
 }
 
-/* || FIN FUNCIONES PARA EVENTOS CON CLICK || */
+/* || FIN FUNCION PARA EVENTOS CON CLICK || */
 
 
 
