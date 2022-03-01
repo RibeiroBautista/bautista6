@@ -4,7 +4,6 @@ let preguntados = true;
 
 const ejecutarPreguntados = () => {
 
-    alert("Las respuestas deberás escribirlas sin mayusculas ni caracteres raros. Dicho esto... ¡Que comiencen las preguntas!")
     for( let i = 0; i < arrayPreguntas.length; i++ ){
         hacerPregunta(i);
     }
@@ -81,6 +80,7 @@ let pregunta2 = new Pregunta(2, "¿En el año de 2021, un equipo de ESports de C
 let pregunta3 = new Pregunta(3, "¿En qué año el SARS-COV-2 arrazó con la población mundial del planeta tierra?", "2017, 2018, 2019, 2020, 2021", "", "2019");
 let pregunta4 = new Pregunta(4, "¿Qué apodo te ponen en un videojuego si no sabes jugarlo?", "Noob, Novato, maleta, carreado, incarreable", "", "noob");
 let arrayPreguntas = [];
+
 arrayPreguntas.push(pregunta1);
 arrayPreguntas.push(pregunta2);
 arrayPreguntas.push(pregunta3);
@@ -96,7 +96,13 @@ const botonJugar = document.querySelector('.botonJugar')
 botonJugar.addEventListener('click', () => {
     ejecutarPreguntados();
 })
+const containerReglas = document.querySelector('.container');
 
+const reglasPreguntados = document.createElement('h2');
+reglasPreguntados.classList.add('container')
+reglasPreguntados.textContent = ('Las respuestas deberás escribirlas sin caracteres raros ("ó, @, ñ, !, etc..."). Dicho esto... ¡Haz click en el botón para jugar!');
+
+containerReglas.appendChild(reglasPreguntados);
 /* || FIN DEL BOTON PARA JUGAR || */
 
 
@@ -151,7 +157,7 @@ function mostrarRespuestas () {
         verRespuesta.onclick = () => {
             cambiarColor(item.id);
         }
-
+        
         contenedorRespuestas.appendChild(verRespuesta);
 
     }
